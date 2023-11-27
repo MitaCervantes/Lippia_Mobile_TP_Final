@@ -14,7 +14,7 @@ public class Hooks {
 
     @After(order = Integer.MAX_VALUE)
     public void afterScenario(Scenario scenario) {
-        if(scenario.getName().equals("Add entry data")) {
+        if(scenario.getName().equals("Add entry data") || scenario.getName().equals("Add date data")) {
             try {
                 // Obtener los espacios de trabajo
                 List<Workspace[]> workspaces = clockifyAPI.getWorkspaces();

@@ -2,57 +2,73 @@ package com.crowdar.examples.steps;
 
 import com.crowdar.core.PageSteps;
 import com.crowdar.core.PropertyManager;
-import com.crowdar.core.actions.MobileActionManager;
-import com.crowdar.examples.constants.HomeConstants;
-import com.crowdar.examples.constants.LoginConstants;
-import com.crowdar.examples.services.HomeService;
+import com.crowdar.examples.services.TimeEntryService;
 import com.crowdar.examples.services.LoginService;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 
 /**
  * This class handles the steps in the features files and connects with the service in case of having business logic.
  * Otherwise, if it is a simple action, like clicking a button and it has nothing related to business logic, is correct to put here.
  */
-public class HomeSteps extends PageSteps {
+public class TimeEntrySteps extends PageSteps {
 
     private final String email = PropertyManager.getProperty("email");
     private final String password = PropertyManager.getProperty("password");
 
     @Then("Home page is displayed")
     public void isHomePageVisible() {
-        HomeService.isViewLoaded();
+        TimeEntryService.isViewLoaded();
     }
 
     @When("The logged-in user is in the time entry section")
     public void theLoggedInUserIsInTheTimeEntrySection() {
         LoginService.doLogin(email, password);
-        HomeService.isViewLoaded();
+        TimeEntryService.isViewLoaded();
     }
     @When("click button add an entry")
     public void clickButtonAddAnEntry() {
-        HomeService.clickEntry();
+        TimeEntryService.clickEntry();
     }
 
     @And("enter the hours worked: {string}:{string}")
     public void enterTheHoursWorked(String hour, String minute) {
-        HomeService.inputHours(hour, minute);
+        TimeEntryService.inputHours(hour, minute);
     }
 
     @And("click button save")
     public void clickButtonSave() {
-        MobileActionManager.click(HomeConstants.ACTION_BUTTON);
+        TimeEntryService.clickButtonSave();
     }
 
     @Then("redirect to the time entry section")
     public void redirectToTheTimeEntrySection() {
-        HomeService.isTitleEntryLoaded();
+        TimeEntryService.isTitleEntryLoaded();
     }
     @And("the created entry appears")
     public void theCreatedEntryAppears() {
-        HomeService.isEntryLoaded();
+        TimeEntryService.isEntryLoaded();
     }
 
+    @And("click in time range")
+    public void clickInTimeRange() { TimeEntryService.clickTimeRange();  }
+
+    @And("select the day {string}-{string}-{string}")
+    public void selectTheDay(String dia, String mes, String anio) {
+        TimeEntryService.chosseDate(dia,mes,anio);
+    }
+    @And("enter a start time: {string}:{string}")
+    public void enterAStartTime(String hour, String minute) {
+        TimeEntryService.setHoraInicio(hour, minute);
+    }
+    @And("end time: {string}:{string}")
+    public void endTime(String hour, String minute) {
+        TimeEntryService.setHoraFin(hour, minute);
+    }
+    @And("save the date and hours")
+    public void saveTheDateAndHours() {
+        TimeEntryService.clickButtonSave();
+        TimeEntryService.clickButtonSave();
+    }
 }
