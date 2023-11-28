@@ -4,14 +4,6 @@ Feature: As a potential client i want to interact with the mobile application
 Background:
   Given The app is loaded correctly
 
-  @Login
-  Scenario Outline: The user starts the application, log in to the app.
-    When The user logs in the application with: <email>, <password>
-    Then Home page is displayed
-
-    Examples:
-      | email                            | password    |
-      | cervantes.mariana.6017@gmail.com | MitaCerv#21 |
 
   @EntryHours
   Scenario: Add entry data

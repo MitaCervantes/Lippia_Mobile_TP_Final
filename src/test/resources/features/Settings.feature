@@ -1,4 +1,4 @@
-@Smoke
+
 Feature: As a potential client i want to interact with the mobile application
 
 Background:
@@ -8,7 +8,7 @@ Background:
 
   @SetDarkMode
   Scenario: Change settings - dark mode
-    When click on menu button
+    And click on menu button
     And click on settings option
     And choose enable dark mode
     Then the app changes its color
@@ -16,7 +16,7 @@ Background:
 
   @SetNotificatios
   Scenario: Change settings - set notifications
-    When click on menu button
+    And click on menu button
     And click on settings option
     And choose enable notifications
     Then verify notifications are enabled or not

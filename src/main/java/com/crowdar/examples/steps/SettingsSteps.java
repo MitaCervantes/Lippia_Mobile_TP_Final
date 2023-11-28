@@ -7,7 +7,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 
 public class SettingsSteps {
-    @When("click on menu button")
+    @And("click on menu button")
     public void clickMenuButton(){
         SettingsService.clickMenuButton();
     }

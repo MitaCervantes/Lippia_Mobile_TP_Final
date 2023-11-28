@@ -4,7 +4,7 @@ import com.crowdar.core.PageSteps;
 import com.crowdar.core.PropertyManager;
 import com.crowdar.examples.services.TimeEntryService;
 import com.crowdar.examples.services.TimeRangeService;
-import com.crowdar.examples.services.LoginService;
+import com.crowdar.examples.services.LogInOutService;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.cucumber.java.en.And;
@@ -22,7 +22,7 @@ public class TimeEntrySteps extends PageSteps {
 
     @When("The logged-in user is in the time entry section")
     public void theLoggedInUserIsInTheTimeEntrySection() {
-        LoginService.doLogin(email, password);
+        LogInOutService.doLogin(email, password);
         TimeEntryService.isViewLoaded();
     }
     @When("click button add an entry")
