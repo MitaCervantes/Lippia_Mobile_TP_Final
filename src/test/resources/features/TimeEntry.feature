@@ -1,9 +1,11 @@
 
 Feature: As a potential client i want to interact with the mobile application
 
+Background:
+  Given The app is loaded correctly
+
   @Login
   Scenario Outline: The user starts the application, log in to the app.
-    Given The app is loaded correctly
     When The user logs in the application with: <email>, <password>
     Then Home page is displayed
 
@@ -20,7 +22,7 @@ Feature: As a potential client i want to interact with the mobile application
     Then redirect to the time entry section
     And the created entry appears
 
-  @Smoke
+
   @EntryDate
   Scenario: Add date data
     When The logged-in user is in the time entry section
