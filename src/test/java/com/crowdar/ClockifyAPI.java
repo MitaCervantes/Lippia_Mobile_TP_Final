@@ -53,8 +53,8 @@ public class ClockifyAPI {
             }
 
             Gson gson = new Gson();
-            TimeEntry[] projects = gson.fromJson(response.body().string(), TimeEntry[].class);
-            return List.of(projects);
+            TimeEntry[] timeEntries = gson.fromJson(response.body().string(), TimeEntry[].class);
+            return List.of(timeEntries);
         }
     }
 

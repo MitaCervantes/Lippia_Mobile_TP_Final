@@ -1,4 +1,4 @@
-@Smoke
+
 Feature: As a potential client i want to interact with the mobile application
 
   @Login
@@ -20,7 +20,7 @@ Feature: As a potential client i want to interact with the mobile application
     Then redirect to the time entry section
     And the created entry appears
 
-
+  @Smoke
   @EntryDate
   Scenario: Add date data
     When The logged-in user is in the time entry section
@@ -33,4 +33,12 @@ Feature: As a potential client i want to interact with the mobile application
     Then redirect to the time entry section
     And the created entry appears
 
+
+  @EntryCancelled
+  Scenario: 4. Generate a data entry, and cancel save
+    When The logged-in user is in the time entry section
+    And click button add an entry
+    And enter the hours worked: "22":"30"
+    And cancel the entry and return
+    Then redirect to the time entry section
 

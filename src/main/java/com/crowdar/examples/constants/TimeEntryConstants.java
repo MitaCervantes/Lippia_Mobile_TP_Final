@@ -16,6 +16,9 @@ public class TimeEntryConstants {
     public static final String BTN_PREVIOUS_MONTH = "ACCESSIBILITY_ID:Previous month";
     public static final String BTN_START = "ACCESSIBILITY_ID:START";
     public static final String BTN_END = "ACCESSIBILITY_ID:END";
+    public static final String TOOLBAR_DISCARD_BUTTON = "id:toolbar_discard_button";
+    public static final String DISCARD_BUTTON = "id:discard_button";
+    public static final String NAVIGATE_RETURN = "ACCESSIBILITY_ID:Navigate up";
     public static  final String BUTTON_MENU_ENTRY = "id:time_entry_more_button_icon";
     public static  final String BUTTON_DELETE_ENTRY = "id:bottom_sheet_delete";
     public static final String NO_ENTRY = "id:textView7";
