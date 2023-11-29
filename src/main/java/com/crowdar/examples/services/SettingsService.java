@@ -3,7 +3,6 @@ package com.crowdar.examples.services;
 import com.crowdar.core.actions.MobileActionManager;
 import com.crowdar.examples.constants.SettingsConstants;
 import org.testng.Assert;
-
 import static com.crowdar.core.actions.ActionManager.getAttribute;
 
 public class SettingsService {

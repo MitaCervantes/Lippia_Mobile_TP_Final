@@ -9,7 +9,6 @@ public class TimeEntryConstants {
     public static final String INPUT_MINUTE = "xpath://android.widget.NumberPicker[2]/android.widget.EditText";
     public static final String ENTRY = "xpath://android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup";
     public static final String TITLE_TIME_ENTRY = "ACCESSIBILITY_ID:Time entries";
-
     public static final String TIME_RANGE = "id:timeentry_start_date";
     public static final String DATE_DIV = "id:coordinator_layout";
     public static final String BTN_NEXT_MONTH = "ACCESSIBILITY_ID:Next month";

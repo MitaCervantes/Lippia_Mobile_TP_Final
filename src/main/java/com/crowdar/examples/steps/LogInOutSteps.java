@@ -16,7 +16,6 @@ public class LogInOutSteps extends PageSteps {
         LogInOutService.isViewLoaded();
     }
 
-
     @When("The user logs in the application with: (.*), (.*)")
     public void doLoginProcess(String email, String password) {
         LogInOutService.doLogin(email, password);

@@ -44,6 +44,7 @@ public class TimeEntrySteps extends PageSteps {
     public void redirectToTheTimeEntrySection() {
         TimeEntryService.isTitleEntryLoaded();
     }
+
     @And("the created entry appears")
     public void theCreatedEntryAppears() {
         TimeEntryService.isEntryLoaded();
@@ -56,14 +57,17 @@ public class TimeEntrySteps extends PageSteps {
     public void selectTheDay(String dia, String mes, String anio) {
         TimeRangeService.chosseDate(dia,mes,anio);
     }
+
     @And("enter a start time: {string}:{string}")
     public void enterAStartTime(String hour, String minute) {
         TimeEntryService.setHoraInicio(hour, minute);
     }
+
     @And("end time: {string}:{string}")
     public void endTime(String hour, String minute) {
         TimeEntryService.setHoraFin(hour, minute);
     }
+
     @And("save the date and hours")
     public void saveTheDateAndHours() {
         TimeEntryService.clickButtonSave();

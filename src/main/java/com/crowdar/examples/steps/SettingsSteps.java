@@ -2,7 +2,6 @@ package com.crowdar.examples.steps;
 
 import com.crowdar.examples.constants.SettingsConstants;
 import com.crowdar.examples.services.SettingsService;
-import cucumber.api.java.en.When;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 

@@ -3,7 +3,7 @@ package com.crowdar.examples.services;
 import com.crowdar.core.actions.MobileActionManager;
 import com.crowdar.examples.constants.TimeEntryConstants;
 import org.testng.Assert;
-
+import org.testng.asserts.SoftAssert;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -14,8 +14,8 @@ import java.util.Map;
 public class TimeRangeService {
     public static void clickTimeRange(){
         MobileActionManager.click(TimeEntryConstants.TIME_RANGE);
-        MobileActionManager.waitVisibility(TimeEntryConstants.DATE_DIV);
-
+        SoftAssert assertsSoft = new SoftAssert();
+        assertsSoft.assertTrue(MobileActionManager.isVisible(TimeEntryConstants.DATE_DIV), "Date Div is not visible");
     }
 
     public static void chosseDate(String dia, String mes, String anio) {

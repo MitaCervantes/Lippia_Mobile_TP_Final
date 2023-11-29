@@ -4,14 +4,6 @@ import com.crowdar.core.actions.MobileActionManager;
 import com.crowdar.examples.constants.TimeEntryConstants;
 import org.testng.Assert;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.util.HashMap;
-import java.util.Map;
-
-
 public class TimeEntryService {
 
     public static void isViewLoaded() {
@@ -44,7 +36,6 @@ public class TimeEntryService {
     public static void isEntryLoaded(){
         Assert.assertTrue(MobileActionManager.isVisible(TimeEntryConstants.ENTRY));
     }
-
 
 
     public static void setHoraInicio(String hora, String min) {
